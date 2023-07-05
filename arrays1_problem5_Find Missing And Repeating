@@ -1,0 +1,22 @@
+vector<int> findTwoElement(vector<int> a, int n) {
+        // code here
+        unordered_map<int, int> mp;
+        vector<int> ans;
+        for(int i=0;i<n;i++){
+            mp[a[i]]++;
+        }
+        for(auto i:mp){
+            if(i.second>1){
+                ans.push_back(i.first);
+            }
+        }
+        for(int i=0;i<n;i++){
+            if(mp.find(i+1)!=mp.end()){
+                continue;
+            }
+            else{
+                ans.push_back(i+1);
+            }
+        }
+        return ans;
+    }
