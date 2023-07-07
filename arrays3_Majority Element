@@ -1,0 +1,20 @@
+lass Solution {
+public:
+    int majorityElement(vector<int>& n) {
+        int ans=n[0];
+        int c=1;
+        for(int i=1;i<n.size();i++){
+            if(c==0){
+               ans=n[i];
+               c++;
+            }
+            if(ans=n[i]){
+                c++;
+            }
+          else{
+            c--;
+          }
+        }
+        return ans;
+    }
+};
